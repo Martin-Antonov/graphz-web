@@ -1,0 +1,35 @@
+@import "shared/constants";
+
+.grid-wrapper {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-gap: 0;
+  grid-template-columns: 40px calc(100% - 80px) 40px;
+  grid-template-rows: 52px calc(100% - 82px) 30px;
+  grid-template-areas: "g-top g-top g-top" "g-left g-middle g-right" "g-bottom g-bottom g-bottom";
+
+  app-left-menu {
+    grid-area: g-left;
+  }
+  app-right-menu {
+    grid-area: g-right;
+    z-index: 2;
+  }
+  app-top-menu {
+    z-index:3;
+    grid-area: g-top;
+  }
+  app-bottom-menu {
+    z-index:3;
+    grid-area: g-bottom;
+  }
+  app-graphz {
+    z-index:1;
+    grid-area: g-middle;
+    .ng-resizable-diagonal{
+      border-bottom: 12px solid $grey1;
+    }
+  }
+}
+
